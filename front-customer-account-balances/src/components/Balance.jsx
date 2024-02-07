@@ -1,11 +1,23 @@
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  ImageBackground,
+} from "react-native";
 import React from "react";
 import toRupiah from "../Rupiah";
+import { Image } from "react-native-web";
 
 const Balance = ({ data, navigation }) => {
   console.log(navigation, "nav");
   return (
-    <View style={styles.container}>
+    <ImageBackground
+      source={{ uri: "../../assets/card-background.png" }}
+      style={styles.container}
+      imageStyle={{ borderRadius: 18 }}
+      resizeMode="cover"
+    >
       <View
         style={{
           flex: 1,
@@ -13,19 +25,21 @@ const Balance = ({ data, navigation }) => {
           justifyContent: "space-between",
         }}
       >
-        <Text style={styles.title}>Hi, {data.name}. Saldo anda:</Text>
+        <Text style={[styles.title, styles.white]}>
+          Hi, {data.name}. Saldo anda:
+        </Text>
         <TouchableOpacity
           onPress={() => {
             navigation.navigate("Topup");
           }}
         >
-          <Text>Topup</Text>
+          <Text style={styles.white}>Topup</Text>
         </TouchableOpacity>
       </View>
-      <Text style={{ fontSize: 20, fontWeight: "bold" }}>
+      <Text style={{ fontSize: 20, fontWeight: "bold", color: "white" }}>
         {toRupiah(data.balance)}
       </Text>
-    </View>
+    </ImageBackground>
   );
 };
 
@@ -39,4 +53,10 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   title: { fontSize: 14, color: "#1E1E1E" },
+  white: { color: "white" },
+  button: {
+    backgroundColor: "#FFFFFF",
+    width: "auto",
+    borderRadius: 10,
+  },
 });

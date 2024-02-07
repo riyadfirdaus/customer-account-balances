@@ -12,14 +12,17 @@ const TopupScreen = () => {
 
   return (
     <View style={{ flex: 1, padding: 20 }}>
-      <TextInput
-        style={styles.input}
-        onChange={(text) => setAmount(text)}
-        value={amount}
-      ></TextInput>
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Topup</Text>
-      </TouchableOpacity>
+      <Text style={styles.header}>Top up your balance</Text>
+      <View style={styles.topUpContainer}>
+        <TextInput
+          style={styles.input}
+          onChange={(text) => setAmount(text)}
+          value={amount}
+        ></TextInput>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Topup</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -27,6 +30,12 @@ const TopupScreen = () => {
 export default TopupScreen;
 
 const styles = StyleSheet.create({
+  topUpContainer: {
+    padding: 20,
+    backgroundColor: "white",
+    borderRadius: 20,
+    gap: 12,
+  },
   mainContainer: {
     flex: 1,
     padding: 20,
@@ -34,10 +43,14 @@ const styles = StyleSheet.create({
   input: {
     height: 40,
     borderRadius: 10,
-    backgroundColor: "white",
+    backgroundColor: "#F2F2F2",
     padding: 10,
   },
-
+  header: {
+    fontSize: 18,
+    fontWeight: "bold",
+    marginBottom: 8,
+  },
   button: {
     backgroundColor: "#E64A19",
     width: "auto",
