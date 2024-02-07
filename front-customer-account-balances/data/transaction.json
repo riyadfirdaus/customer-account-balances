@@ -7,8 +7,14 @@
   },
   {
     "name": "Transfer",
-    "description": "Transfer ke BCA",
+    "description": "Transfer Masuk dari BCA",
     "amount": 200000,
     "type": "IN"
+  },
+  {
+    "name": "Transfer",
+    "description": "Transfer keluar ke BCA",
+    "amount": 200000,
+    "type": "OUT"
   }
 ]

@@ -11,7 +11,7 @@ const TopupScreen = () => {
   const [amount, setAmount] = useState("0");
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1, padding: 20 }}>
       <TextInput
         style={styles.input}
         onChange={(text) => setAmount(text)}
@@ -33,9 +33,7 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 40,
-    margin: 12,
-
-    borderRadius: 20,
+    borderRadius: 10,
     backgroundColor: "white",
     padding: 10,
   },
